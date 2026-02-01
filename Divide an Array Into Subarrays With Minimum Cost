@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int minimumCost(vector<int>& nums) {
+        int v1=nums[0];
+        int v2=nums[1];
+        int v3=nums[2];
+        for(int i=3; i<nums.size();i++){
+            if(v2>nums[i]){
+                if(v3>v2){
+                    v3=nums[i];
+                }
+                else{
+                    v2=nums[i];
+                }
+            }
+            else if(v3>nums[i]){
+                v3=nums[i];
+            }
+        }
+        return v1+v2+v3;
+    }
+};
